@@ -9,7 +9,7 @@ from keras.engine.input_layer import Input
 import keras
 
 # VGG
-model = keras.applications.vgg16.VGG16()
+model = keras.applications.resnet50.ResNet50()
 
 # make lists
 layer_name = []
