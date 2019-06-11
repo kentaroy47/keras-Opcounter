@@ -1,7 +1,9 @@
 # keras-Opcounter
 calculate number of OPS in a Keras model!
 
-right now, supports conv2d and dense only.
+## still under development!
+Right now, supports conv2d and dense only.
+Doesn't fully count the activations yet.
 
 # Usage
 
