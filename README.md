@@ -45,11 +45,65 @@ Total FLOPS[GFLOPS]: 30.932349056
 ```
 python resnet.py
 ```
+
+```
 Total params: 25,636,712
 Trainable params: 25,583,592
 Non-trainable params: 53,120
 __________________________________________________________________________________________________
-layers: ['conv1', 'res2a_branch2a', 'res2a_branch2b', 'res2a_branch2c', 'res2a_branch1', 'res2b_branch2a', 'res2b_branch2b', 'res2b_branch2c', 'res2c_branch2a', 'res2c_branch2b', 'res2c_branch2c', 'res3a_branch2a', 'res3a_branch2b', 'res3a_branch2c', 'res3a_branch1', 'res3b_branch2a', 'res3b_branch2b', 'res3b_branch2c', 'res3c_branch2a', 'res3c_branch2b', 'res3c_branch2c', 'res3d_branch2a', 'res3d_branch2b', 'res3d_branch2c', 'res4a_branch2a', 'res4a_branch2b', 'res4a_branch2c', 'res4a_branch1', 'res4b_branch2a', 'res4b_branch2b', 'res4b_branch2c', 'res4c_branch2a', 'res4c_branch2b', 'res4c_branch2c', 'res4d_branch2a', 'res4d_branch2b', 'res4d_branch2c', 'res4e_branch2a', 'res4e_branch2b', 'res4e_branch2c', 'res4f_branch2a', 'res4f_branch2b', 'res4f_branch2c', 'res5a_branch2a', 'res5a_branch2b', 'res5a_branch2c', 'res5a_branch1', 'res5b_branch2a', 'res5b_branch2b', 'res5b_branch2c', 'res5c_branch2a', 'res5c_branch2b', 'res5c_branch2c', 'fc1000']
-FLOPS: [498486016, 25890816, 231411712, 103563264, 103563264, 102961152, 231411712, 103563264, 102961152, 231411712, 103563264, 102860800, 231311360, 103161856, 411443200, 102860800, 231311360, 103161856, 102860800, 231311360, 103161856, 102860800, 231311360, 103161856, 102810624, 231261184, 102961152, 411242496, 102810624, 231261184, 102961152, 102810624, 231261184, 102961152, 102810624, 231261184, 102961152, 102810624, 231261184, 102961152, 102810624, 231261184, 102961152, 102785536, 231236096, 102860800, 411142144, 102785536, 231236096, 102860800, 102785536, 231236096, 102860800, 4097000]
-
-Total FLOPS[GFLOPS]: 8.758893288
+layer: conv1 (None, 230, 230, 3)  MegaFLOPS: 497.683264  MegaWeights: 0.009472
+layer: res2a_branch2a (None, 56, 56, 64)  MegaFLOPS: 25.690176  MegaWeights: 0.00416
+layer: res2a_branch2b (None, 56, 56, 64)  MegaFLOPS: 231.211072  MegaWeights: 0.036928
+layer: res2a_branch2c (None, 56, 56, 64)  MegaFLOPS: 102.760704  MegaWeights: 0.01664
+layer: res2a_branch1 (None, 56, 56, 64)  MegaFLOPS: 102.760704  MegaWeights: 0.01664
+layer: res2b_branch2a (None, 56, 56, 256)  MegaFLOPS: 102.760512  MegaWeights: 0.016448
+layer: res2b_branch2b (None, 56, 56, 64)  MegaFLOPS: 231.211072  MegaWeights: 0.036928
+layer: res2b_branch2c (None, 56, 56, 64)  MegaFLOPS: 102.760704  MegaWeights: 0.01664
+layer: res2c_branch2a (None, 56, 56, 256)  MegaFLOPS: 102.760512  MegaWeights: 0.016448
+layer: res2c_branch2b (None, 56, 56, 64)  MegaFLOPS: 231.211072  MegaWeights: 0.036928
+layer: res2c_branch2c (None, 56, 56, 64)  MegaFLOPS: 102.760704  MegaWeights: 0.01664
+layer: res3a_branch2a (None, 56, 56, 256)  MegaFLOPS: 102.760576  MegaWeights: 0.032896
+layer: res3a_branch2b (None, 28, 28, 128)  MegaFLOPS: 231.211136  MegaWeights: 0.147584
+layer: res3a_branch2c (None, 28, 28, 128)  MegaFLOPS: 102.76096  MegaWeights: 0.066048
+layer: res3a_branch1 (None, 56, 56, 256)  MegaFLOPS: 411.042304  MegaWeights: 0.131584
+layer: res3b_branch2a (None, 28, 28, 512)  MegaFLOPS: 102.760576  MegaWeights: 0.065664
+layer: res3b_branch2b (None, 28, 28, 128)  MegaFLOPS: 231.211136  MegaWeights: 0.147584
+layer: res3b_branch2c (None, 28, 28, 128)  MegaFLOPS: 102.76096  MegaWeights: 0.066048
+layer: res3c_branch2a (None, 28, 28, 512)  MegaFLOPS: 102.760576  MegaWeights: 0.065664
+layer: res3c_branch2b (None, 28, 28, 128)  MegaFLOPS: 231.211136  MegaWeights: 0.147584
+layer: res3c_branch2c (None, 28, 28, 128)  MegaFLOPS: 102.76096  MegaWeights: 0.066048
+layer: res3d_branch2a (None, 28, 28, 512)  MegaFLOPS: 102.760576  MegaWeights: 0.065664
+layer: res3d_branch2b (None, 28, 28, 128)  MegaFLOPS: 231.211136  MegaWeights: 0.147584
+layer: res3d_branch2c (None, 28, 28, 128)  MegaFLOPS: 102.76096  MegaWeights: 0.066048
+layer: res4a_branch2a (None, 28, 28, 512)  MegaFLOPS: 102.760704  MegaWeights: 0.131328
+layer: res4a_branch2b (None, 14, 14, 256)  MegaFLOPS: 231.211264  MegaWeights: 0.59008
+layer: res4a_branch2c (None, 14, 14, 256)  MegaFLOPS: 102.761472  MegaWeights: 0.263168
+layer: res4a_branch1 (None, 28, 28, 512)  MegaFLOPS: 411.042816  MegaWeights: 0.525312
+layer: res4b_branch2a (None, 14, 14, 1024)  MegaFLOPS: 102.760704  MegaWeights: 0.2624
+layer: res4b_branch2b (None, 14, 14, 256)  MegaFLOPS: 231.211264  MegaWeights: 0.59008
+layer: res4b_branch2c (None, 14, 14, 256)  MegaFLOPS: 102.761472  MegaWeights: 0.263168
+layer: res4c_branch2a (None, 14, 14, 1024)  MegaFLOPS: 102.760704  MegaWeights: 0.2624
+layer: res4c_branch2b (None, 14, 14, 256)  MegaFLOPS: 231.211264  MegaWeights: 0.59008
+layer: res4c_branch2c (None, 14, 14, 256)  MegaFLOPS: 102.761472  MegaWeights: 0.263168
+layer: res4d_branch2a (None, 14, 14, 1024)  MegaFLOPS: 102.760704  MegaWeights: 0.2624
+layer: res4d_branch2b (None, 14, 14, 256)  MegaFLOPS: 231.211264  MegaWeights: 0.59008
+layer: res4d_branch2c (None, 14, 14, 256)  MegaFLOPS: 102.761472  MegaWeights: 0.263168
+layer: res4e_branch2a (None, 14, 14, 1024)  MegaFLOPS: 102.760704  MegaWeights: 0.2624
+layer: res4e_branch2b (None, 14, 14, 256)  MegaFLOPS: 231.211264  MegaWeights: 0.59008
+layer: res4e_branch2c (None, 14, 14, 256)  MegaFLOPS: 102.761472  MegaWeights: 0.263168
+layer: res4f_branch2a (None, 14, 14, 1024)  MegaFLOPS: 102.760704  MegaWeights: 0.2624
+layer: res4f_branch2b (None, 14, 14, 256)  MegaFLOPS: 231.211264  MegaWeights: 0.59008
+layer: res4f_branch2c (None, 14, 14, 256)  MegaFLOPS: 102.761472  MegaWeights: 0.263168
+layer: res5a_branch2a (None, 14, 14, 1024)  MegaFLOPS: 102.76096  MegaWeights: 0.5248
+layer: res5a_branch2b (None, 7, 7, 512)  MegaFLOPS: 231.21152  MegaWeights: 2.359808
+layer: res5a_branch2c (None, 7, 7, 512)  MegaFLOPS: 102.762496  MegaWeights: 1.050624
+layer: res5a_branch1 (None, 14, 14, 1024)  MegaFLOPS: 411.04384  MegaWeights: 2.0992
+layer: res5b_branch2a (None, 7, 7, 2048)  MegaFLOPS: 102.76096  MegaWeights: 1.049088
+layer: res5b_branch2b (None, 7, 7, 512)  MegaFLOPS: 231.21152  MegaWeights: 2.359808
+layer: res5b_branch2c (None, 7, 7, 512)  MegaFLOPS: 102.762496  MegaWeights: 1.050624
+layer: res5c_branch2a (None, 7, 7, 2048)  MegaFLOPS: 102.76096  MegaWeights: 1.049088
+layer: res5c_branch2b (None, 7, 7, 512)  MegaFLOPS: 231.21152  MegaWeights: 2.359808
+layer: res5c_branch2c (None, 7, 7, 512)  MegaFLOPS: 102.762496  MegaWeights: 1.050624
+layer: fc1000 (None, 2048)  MegaFLOPS: 4.097  MegaWeights: 2.049
+Total FLOPS[GFLOPS]: 8.748332712
+```
