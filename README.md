@@ -1,15 +1,17 @@
 # keras-Opcounter
 calculate number of OPS in a Keras model!
 
-## still under development! :)
-Numbers are still buggy, plz wait till I fix this.
-
-Right now, supports conv2d and dense only.
-
-Doesn't fully count the activations yet.
-
-We count 1 MAC as 2 FLOPS and 1 ADD as 1 FLOPS.
 # Usage
+
+```
+from util import profile
+# analyze FLOPS
+layer_name, layer_flops, inshape, weights = profile(your_keras_model)
+
+# visualize results
+for name, flop, shape, weight in zip(layer_name, layer_flops, inshape, weights):
+    print("layer:", name, shape, " MegaFLOPS:", flop/1e6, " MegaWeights:", weight/1e6)
+```
 
 ## Count the ops in VGG16:
 
@@ -107,3 +109,12 @@ layer: res5c_branch2c (None, 7, 7, 512)  MegaFLOPS: 102.762496  MegaWeights: 1.0
 layer: fc1000 (None, 2048)  MegaFLOPS: 4.097  MegaWeights: 2.049
 Total FLOPS[GFLOPS]: 8.748332712
 ```
+
+## still under development! :)
+Numbers are still buggy, plz wait till I fix this.
+
+Right now, supports conv2d and dense only.
+
+Doesn't fully count the activations yet.
+
+We count 1 MAC as 2 FLOPS and 1 ADD as 1 FLOPS.
