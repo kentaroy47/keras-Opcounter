@@ -6,14 +6,16 @@ add your model discription and calculate the computation!
 import keras
 from util import profile
 
-# TODO: NotSupportedYet!
+log = True
+
+# TODO: NotSupportedYet! == 
 model = keras.applications.densenet.DenseNet169(weights=None)
 
 # look at model
 model.summary()
 
 # run profile
-layer_name, layer_flops, inshape, weights = profile(model)
+layer_name, layer_flops, inshape, weights = profile(model, log)
 
 # visualize results
 for name, flop, shape, weight in zip(layer_name, layer_flops, inshape, weights):

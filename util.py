@@ -12,7 +12,9 @@ def count_linear(layers):
         ADD = 0
     return MAC*2 + ADD
 
-def count_conv2d(layers):
+def count_conv2d(layers, log = False):
+    if log:
+        print(layers.get_config())
     # number of conv operations = input_h * input_w / stride = output^2
     numshifts = int(layers.output_shape[1] * layers.output_shape[2])
     
@@ -26,7 +28,7 @@ def count_conv2d(layers):
         
     return MACperConv * numshifts * 2 + ADD
 
-def profile(model):
+def profile(model, log = False):
     # make lists
     layer_name = []
     layer_flops = []
@@ -41,12 +43,12 @@ def profile(model):
             inshape.append(layer.input_shape)
             weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
         elif "conv" in layer.get_config()["name"] and "pad" not in layer.get_config()["name"] and "bn" not in layer.get_config()["name"]:
-            layer_flops.append(count_conv2d(layer))
+            layer_flops.append(count_conv2d(layer,log))
             layer_name.append(layer.get_config()["name"])
             inshape.append(layer.input_shape)
             weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
         elif "res" in layer.get_config()["name"] and "branch" in layer.get_config()["name"]:
-            layer_flops.append(count_conv2d(layer))
+            layer_flops.append(count_conv2d(layer,log))
             layer_name.append(layer.get_config()["name"])
             inshape.append(layer.input_shape)
             weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
