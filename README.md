@@ -3,6 +3,9 @@ calculate number of OPS in a Keras model!
 
 # Usage
 
+just put the util.py in your repo.
+then..
+
 ```python
 from util import profile
 # analyze FLOPS
