@@ -27,6 +27,8 @@ def count_linear(layers):
 
 def count_conv2d(layers):
     print(layers.get_config())
+    print(layers.input_shape)
+    print(layers.output_shape)
     # number of conv operations = input_h * input_w / stride
     try:
         numshifts = int(layers.input_shape[1] * layers.input_shape[2] / layers.get_config()["strides"][0])
@@ -65,6 +67,6 @@ model.summary()
 print("layers:", layer_name)
 print("FLOPS:", layer_flops)
 
-print("Total FLOPS[GFLOPS]:", sum(layer_flops)/10e9)
+print("Total FLOPS[GFLOPS]:", sum(layer_flops)/1e9)
 
 # TODO: summarize results as dict
