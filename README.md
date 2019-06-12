@@ -17,14 +17,28 @@ We count 1 MAC as 2 FLOPS and 1 ADD as 1 FLOPS.
 python vgg.py
 ```
 
+```
 Total params: 138,357,544
 Trainable params: 138,357,544
 Non-trainable params: 0
 _________________________________________________________________
-layers: ['input_5', 'block1_conv1', 'block1_conv2', 'block1_pool', 'block2_conv1', 'block2_conv2', 'block2_pool', 'block3_conv1', 'block3_conv2', 'block3_conv3', 'block3_pool', 'block4_conv1', 'block4_conv2', 'block4_conv3', 'block4_pool', 'block5_conv1', 'block5_conv2', 'block5_conv3', 'block5_pool', 'flatten', 'fc1', 'fc2', 'predictions']
-FLOPS: [176619520, 3702587392, 1851293696, 3700981760, 1850490880, 3700178944, 3700178944, 1850089472, 3699777536, 3699777536, 924944384, 924944384, 924944384, 205524992, 33558528]
-
+layer: block1_conv1  MegaFLOPS: 176.61952
+layer: block1_conv2  MegaFLOPS: 3702.587392
+layer: block2_conv1  MegaFLOPS: 1851.293696
+layer: block2_conv2  MegaFLOPS: 3700.98176
+layer: block3_conv1  MegaFLOPS: 1850.49088
+layer: block3_conv2  MegaFLOPS: 3700.178944
+layer: block3_conv3  MegaFLOPS: 3700.178944
+layer: block4_conv1  MegaFLOPS: 1850.089472
+layer: block4_conv2  MegaFLOPS: 3699.777536
+layer: block4_conv3  MegaFLOPS: 3699.777536
+layer: block5_conv1  MegaFLOPS: 924.944384
+layer: block5_conv2  MegaFLOPS: 924.944384
+layer: block5_conv3  MegaFLOPS: 924.944384
+layer: fc1  MegaFLOPS: 205.524992
+layer: fc2  MegaFLOPS: 33.558528
 Total FLOPS[GFLOPS]: 30.945892352
+```
 
 ## Count the ops in resnet50:
 
