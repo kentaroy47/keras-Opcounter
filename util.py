@@ -13,8 +13,8 @@ def count_linear(layers):
     return MAC*2 + ADD
 
 def count_conv2d(layers):
-    # number of conv operations = input_h * input_w / stride
-    numshifts = int(layers.input_shape[1] * layers.input_shape[2] / layers.get_config()["strides"][0])
+    # number of conv operations = input_h * input_w / stride = output^2
+    numshifts = int(layers.output_shape[1] * layers.output_shape[2])
     
     # MAC/convfilter = kernelsize^2 * InputChannels * OutputChannels
     MACperConv = layers.get_config()["kernel_size"][0] * layers.get_config()["kernel_size"][1] * layers.input_shape[3] * layers.output_shape[3]

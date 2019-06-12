@@ -6,10 +6,8 @@ add your model discription and calculate the computation!
 import keras
 from util import profile
 
-# TODO: RELUs
-# TODO: BatchNorms
-# Residual Paths
-model = keras.applications.resnet50.ResNet50(weights=None)
+# TODO: NotSupportedYet!
+model = keras.applications.densenet.DenseNet169(weights=None)
 
 # look at model
 model.summary()
@@ -22,6 +20,3 @@ for name, flop, shape, weight in zip(layer_name, layer_flops, inshape, weights):
     print("layer:", name, shape, " MegaFLOPS:", flop/1e6, " MegaWeights:", weight/1e6)
 
 print("Total FLOPS[GFLOPS]:", sum(layer_flops)/1e9)
-
-
-# TODO: summarize results as dict

@@ -7,7 +7,7 @@ import keras
 from util import profile
 
 # VGG
-model = keras.applications.vgg16.VGG16()
+model = keras.applications.vgg16.VGG16(weights=None)
 
 # look at model
 model.summary()
