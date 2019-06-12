@@ -8,8 +8,7 @@ from util import profile
 
 log = True
 
-# TODO: NotSupportedYet! == 
-model = keras.applications.densenet.DenseNet169(weights=None)
+model = keras.applications.densenet.DenseNet121(weights=None)
 
 # look at model
 model.summary()

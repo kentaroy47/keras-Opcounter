@@ -42,7 +42,7 @@ def profile(model, log = False):
             layer_name.append(layer.get_config()["name"])
             inshape.append(layer.input_shape)
             weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
-        elif "conv" in layer.get_config()["name"] and "pad" not in layer.get_config()["name"] and "bn" not in layer.get_config()["name"]:
+        elif "conv" in layer.get_config()["name"] and "pad" not in layer.get_config()["name"] and "bn" not in layer.get_config()["name"] and "relu" not in layer.get_config()["name"] and "concat" not in layer.get_config()["name"]:
             layer_flops.append(count_conv2d(layer,log))
             layer_name.append(layer.get_config()["name"])
             inshape.append(layer.input_shape)

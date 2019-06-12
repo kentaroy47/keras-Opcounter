@@ -3,7 +3,7 @@ calculate number of OPS in a Keras model!
 
 # Usage
 
-```
+```python
 from util import profile
 # analyze FLOPS
 layer_name, layer_flops, inshape, weights = profile(your_keras_model)
