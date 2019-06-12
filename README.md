@@ -16,6 +16,11 @@ for name, flop, shape, weight in zip(layer_name, layer_flops, inshape, weights):
     print("layer:", name, shape, " MegaFLOPS:", flop/1e6, " MegaWeights:", weight/1e6)
 ```
 
+### great thanks
+@Lyken17
+
+https://github.com/Lyken17/pytorch-OpCounter
+
 ## Count the ops in VGG16:
 
 ```
