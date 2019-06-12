@@ -22,22 +22,22 @@ Total params: 138,357,544
 Trainable params: 138,357,544
 Non-trainable params: 0
 _________________________________________________________________
-layer: block1_conv1  MegaFLOPS: 176.61952
-layer: block1_conv2  MegaFLOPS: 3702.587392
-layer: block2_conv1  MegaFLOPS: 1851.293696
-layer: block2_conv2  MegaFLOPS: 3700.98176
-layer: block3_conv1  MegaFLOPS: 1850.49088
-layer: block3_conv2  MegaFLOPS: 3700.178944
-layer: block3_conv3  MegaFLOPS: 3700.178944
-layer: block4_conv1  MegaFLOPS: 1850.089472
-layer: block4_conv2  MegaFLOPS: 3699.777536
-layer: block4_conv3  MegaFLOPS: 3699.777536
-layer: block5_conv1  MegaFLOPS: 924.944384
-layer: block5_conv2  MegaFLOPS: 924.944384
-layer: block5_conv3  MegaFLOPS: 924.944384
-layer: fc1  MegaFLOPS: 205.524992
-layer: fc2  MegaFLOPS: 33.558528
-Total FLOPS[GFLOPS]: 30.945892352
+layer: block1_conv1 (None, 224, 224, 3)  MegaFLOPS: 173.40832  MegaWeights: 0.001792
+layer: block1_conv2 (None, 224, 224, 64)  MegaFLOPS: 3699.376192  MegaWeights: 0.036928
+layer: block2_conv1 (None, 112, 112, 64)  MegaFLOPS: 1849.688192  MegaWeights: 0.073856
+layer: block2_conv2 (None, 112, 112, 128)  MegaFLOPS: 3699.376256  MegaWeights: 0.147584
+layer: block3_conv1 (None, 56, 56, 128)  MegaFLOPS: 1849.68832  MegaWeights: 0.295168
+layer: block3_conv2 (None, 56, 56, 256)  MegaFLOPS: 3699.376384  MegaWeights: 0.59008
+layer: block3_conv3 (None, 56, 56, 256)  MegaFLOPS: 3699.376384  MegaWeights: 0.59008
+layer: block4_conv1 (None, 28, 28, 256)  MegaFLOPS: 1849.688576  MegaWeights: 1.18016
+layer: block4_conv2 (None, 28, 28, 512)  MegaFLOPS: 3699.37664  MegaWeights: 2.359808
+layer: block4_conv3 (None, 28, 28, 512)  MegaFLOPS: 3699.37664  MegaWeights: 2.359808
+layer: block5_conv1 (None, 14, 14, 512)  MegaFLOPS: 924.844544  MegaWeights: 2.359808
+layer: block5_conv2 (None, 14, 14, 512)  MegaFLOPS: 924.844544  MegaWeights: 2.359808
+layer: block5_conv3 (None, 14, 14, 512)  MegaFLOPS: 924.844544  MegaWeights: 2.359808
+layer: fc1 (None, 25088)  MegaFLOPS: 205.524992  MegaWeights: 102.764544
+layer: fc2 (None, 4096)  MegaFLOPS: 33.558528  MegaWeights: 16.781312
+Total FLOPS[GFLOPS]: 30.932349056
 ```
 
 ## Count the ops in resnet50:
