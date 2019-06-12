@@ -6,7 +6,7 @@ add your model discription and calculate the computation!
 import keras
 from util import profile
 
-log = True
+#log = True
 
 model = keras.applications.densenet.DenseNet121(weights=None)
 
