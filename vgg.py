@@ -43,16 +43,17 @@ def count_conv2d(layers):
 
 # run through models
 for layer in model.layers:
-    layer_name.append(layer.get_config()["name"])
     if "dense" in layer.get_config()["name"] or "fc" in layer.get_config()["name"]:
         layer_flops.append(count_linear(layer))
+        layer_name.append(layer.get_config()["name"])
     elif "conv" in layer.get_config()["name"]:
         layer_flops.append(count_conv2d(layer))
+        layer_name.append(layer.get_config()["name"])
         
 model.summary()
-        
-print("layers:", layer_name)
-print("FLOPS:", layer_flops)
+
+for name, flop in zip(layer_name, layer_flops):
+    print("layer:", name, " MegaFLOPS:", flop/1e6)
 
 print("Total FLOPS[GFLOPS]:", sum(layer_flops)/1e9)
 

@@ -64,8 +64,8 @@ for layer in model.layers:
         
 model.summary()
         
-print("layers:", layer_name)
-print("FLOPS:", layer_flops)
+for name, flop in zip(layer_name, layer_flops):
+    print("layer:", name, " MegaFLOPS:", flop/1e6)
 
 print("Total FLOPS[GFLOPS]:", sum(layer_flops)/1e9)
 
