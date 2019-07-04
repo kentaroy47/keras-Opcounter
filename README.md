@@ -1,5 +1,5 @@
 # What is this repo?
-- **Counts the number of OPS in your Keras model! **
+- **Counts the number of OPS in your Keras model!**
 
 - **Visualizes the OPS at each of your layer, to find the bottleneck.**
 
