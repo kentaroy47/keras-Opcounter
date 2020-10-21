@@ -3,6 +3,8 @@
 
 - **Visualizes the OPS at each of your layer, to find the bottleneck.**
 
+Supported layers: conv2d, fc, residual.
+
 # Usage
 
 just put the util.py in your repo.
