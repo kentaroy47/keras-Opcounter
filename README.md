@@ -9,6 +9,8 @@
 
 Supported layers: conv2d, fc, residual.
 
+Supports both keras 2.x and tensorflow 2.0.
+
 # Usage
 
 ```python
