@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
+"""
+Codes by @kentaroy47
 
-import keras.backend as K
+"""
+try:
+    # for tensorflow2
+    #import tensorflow.keras.backend as K
+    # Doesn't work ;(
+    # https://stackoverflow.com/questions/61056781/typeerror-tensor-is-unhashable-instead-use-tensor-ref-as-the-key-in-keras
+    import tensorflow.compat.v1.keras.backend as K
+
+except:
+    # tensorflow1 and keras 2.x
+    import keras.backend as K
 import numpy as np
 
 # bunch of cal per layer
@@ -28,7 +40,7 @@ def count_conv2d(layers, log = False):
         
     return MACperConv * numshifts * 2 + ADD
 
-def profile(model, log = False):
+def profile(model, log=False):
     # make lists
     layer_name = []
     layer_flops = []
@@ -41,16 +53,27 @@ def profile(model, log = False):
             layer_flops.append(count_linear(layer))
             layer_name.append(layer.get_config()["name"])
             inshape.append(layer.input_shape)
-            weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
+
+            # weights seems to be broken in tf2.x
+            try:
+                weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
+            except:
+                pass
         elif "conv" in layer.get_config()["name"] and "pad" not in layer.get_config()["name"] and "bn" not in layer.get_config()["name"] and "relu" not in layer.get_config()["name"] and "concat" not in layer.get_config()["name"]:
             layer_flops.append(count_conv2d(layer,log))
             layer_name.append(layer.get_config()["name"])
             inshape.append(layer.input_shape)
-            weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
+            try:
+                weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
+            except:
+                pass
         elif "res" in layer.get_config()["name"] and "branch" in layer.get_config()["name"]:
             layer_flops.append(count_conv2d(layer,log))
             layer_name.append(layer.get_config()["name"])
             inshape.append(layer.input_shape)
-            weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
+            try:
+                weights.append(int(np.sum([K.count_params(p) for p in set(layer.trainable_weights)])))
+            except:
+                pass
             
     return layer_name, layer_flops, inshape, weights

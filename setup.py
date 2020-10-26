@@ -8,11 +8,7 @@ from setuptools.command.install import install
 
 readme = open('README.md').read()
 
-VERSION = '0.1'
-
-requirements = [
-    'keras',
-]
+VERSION = '0.1.4'
 
 # import subprocess
 # commit_hash = subprocess.check_output("git rev-parse HEAD", shell=True).decode('UTF-8').rstrip()
@@ -37,7 +33,7 @@ setup(
 
     #
     zip_safe=True,
-    install_requires=requirements,
+    #nstall_requires=requirements,
 
     # Classifiers
     classifiers=[
