@@ -6,7 +6,7 @@ add your model discription and calculate the computation!
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Flatten, Conv2D
 from keras.engine.input_layer import Input
-from util import profile
+from kerop import profile
 
 # write your model here!
 model = Sequential()

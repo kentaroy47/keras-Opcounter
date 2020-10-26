@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import keras
-from util import profile
+import kerop
 
 log = True
 
@@ -12,7 +12,7 @@ model = keras.applications.MobileNetV2(weights=None)
 model.summary()
 
 # run profile
-layer_name, layer_flops, inshape, weights = profile(model, log)
+layer_name, layer_flops, inshape, weights = kerop.profile(model, log)
 
 # visualize results
 for name, flop, shape, weight in zip(layer_name, layer_flops, inshape, weights):

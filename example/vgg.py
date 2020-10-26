@@ -4,7 +4,7 @@ add your model discription and calculate the computation!
 """
 
 import keras
-from util import profile
+import kerop
 
 # VGG
 model = keras.applications.vgg16.VGG16(weights=None)
@@ -13,7 +13,7 @@ model = keras.applications.vgg16.VGG16(weights=None)
 model.summary()
 
 # run profile
-layer_name, layer_flops, inshape, weights = profile(model)
+layer_name, layer_flops, inshape, weights = kerop.profile(model)
 
 # visualize results
 for name, flop, shape, weight in zip(layer_name, layer_flops, inshape, weights):

@@ -1,4 +1,8 @@
-# What is this repo?
+# KerOp: Keras-Opcounter
+
+## How to install
+`pip install kerop`
+
 - **Counts the number of OPS in your Keras model!**
 
 - **Visualizes the OPS at each of your layer, to find the bottleneck.**
@@ -7,13 +11,11 @@ Supported layers: conv2d, fc, residual.
 
 # Usage
 
-just put the util.py in your repo.
-then..
-
 ```python
-from util import profile
+import kerop
+
 # analyze FLOPS
-layer_name, layer_flops, inshape, weights = profile(your_keras_model)
+layer_name, layer_flops, inshape, weights = kerop.profile(your_keras_model)
 
 # visualize results
 for name, flop, shape, weight in zip(layer_name, layer_flops, inshape, weights):
@@ -25,10 +27,10 @@ for name, flop, shape, weight in zip(layer_name, layer_flops, inshape, weights):
 
 https://github.com/Lyken17/pytorch-OpCounter
 
-## Count the ops in VGG16:
+## Example: Count the ops in VGG16:
 
 ```
-python vgg.py
+python example/vgg.py
 ```
 
 ```
@@ -57,7 +59,7 @@ Total FLOPS[GFLOPS]: 30.932349056
 ## Count the ops in resnet50:
 
 ```
-python resnet.py
+python example/resnet.py
 ```
 
 ```
@@ -124,7 +126,7 @@ Total FLOPS[GFLOPS]: 8.748332712
 
 ## densenet
 ```
-python densenet.py
+python example/densenet.py
 
 layer: conv1/conv (None, 230, 230, 3)  MegaFLOPS: 236.027904  MegaWeights: 0.009408
 layer: conv2_block1_1_conv (None, 56, 56, 64)  MegaFLOPS: 51.380224  MegaWeights: 0.008192
